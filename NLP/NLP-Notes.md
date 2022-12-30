@@ -121,3 +121,9 @@ The ‘*’ quantifier is used to mark the presence of the preceding character z
 - result = pattern.search("abc")
 
 
+- Anchors are used to specify the start and end of the string.
+- The ‘^’ specifies the start of the string. The character followed by the ‘^’ in the pattern should be the first character of the string in order for a string to match the pattern.
+- the ‘$’ specifies the end of the string. The character that precedes the ‘$’ in the pattern should be the last character in the string in order for the string to match the pattern.
+- there is one special character in regular expressions that acts as a placeholder and can match any character (literally!) in the given input string. It’s the ‘.’ (dot) character is also called the wildcard character. 
+- The wildcard comes handy in many situations. It can be followed by a quantifier which specifies that any character is present a specified number of times.
+- 
