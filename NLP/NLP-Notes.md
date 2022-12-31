@@ -162,4 +162,17 @@ The ‘*’ quantifier is used to mark the presence of the preceding character z
 - Sometimes you need to extract sub-patterns out of a larger pattern. This can be done by using grouping. 
 - Grouping is achieved using the parenthesis operators. 
 - Grouping is a very useful technique when you want to extract substrings from an entire match.
-- 
+
+### Summary
+- there are three stages in text analytics:
+- - Lexical processing
+- - Syntactic processing
+- - Semantic processing
+
+- anchor characters (^ and $) and the wildcard (.)
+- The ^ and $ operator match the start and end of the string.
+- The re.match() function looks for the given pattern at the very start. If it doesn’t find a string at the very start of the string, it returns None.
+- The quantifier {0,} will match the preceding character zero or more times. This is equivalent to what the ‘*’ does as it also matches the preceding character zero or more times.
+- The correct syntax of the re.sub() function is re.sub(pattern, replacement, string)
+-  ‘\s’ captures all the whitespaces in a given string.
+- ‘\’ escapes the meaning of the character that follows it in a regular expression pattern.
