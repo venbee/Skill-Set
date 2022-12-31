@@ -147,3 +147,19 @@ The ‘*’ quantifier is used to mark the presence of the preceding character z
 - There is another approach called the non-greedy approach, also called the lazy approach, where the regex stops looking for the pattern once a particular condition is satisfied.
 
 ### RE Functions
+#### re.match()
+#### re.search()
+#### re.findall()
+#### re.finditer()
+#### re.sub()
+
+- The match function will only match if the pattern is present at the very start of the string. 
+- The search function will look for the pattern starting from the left of the string and keeps searching until it sees the pattern and then returns the match.
+- the re.sub() function. It is used to substitute a substring with another substring of your choice. 
+- The result of the findall() function is a list of all the matches and the finditer() function is used in a 'for' loop to iterate through each separate match one by one.
+
+### Grouping
+- Sometimes you need to extract sub-patterns out of a larger pattern. This can be done by using grouping. 
+- Grouping is achieved using the parenthesis operators. 
+- Grouping is a very useful technique when you want to extract substrings from an entire match.
+- 
