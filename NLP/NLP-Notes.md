@@ -176,3 +176,31 @@ The ‘*’ quantifier is used to mark the presence of the preceding character z
 - The correct syntax of the re.sub() function is re.sub(pattern, replacement, string)
 -  ‘\s’ captures all the whitespaces in a given string.
 - ‘\’ escapes the meaning of the character that follows it in a regular expression pattern.
+
+# Basic Lexical Processing
+
+- Corpus is just a name to refer to textual data in NLP jargon.
+- How to preprocess text using techniques such as
+- - Tokenisation
+- - Stop words removal
+- - Stemming
+- - Lemmatization
+
+- How to build a spam detector using one of the following models:
+- - Bag-of-words model
+- - TF-IDF model
+
+- The most basic statistical analysis you can do is to look at the word frequency distribution, i.e. visualising the word frequencies of a given text corpus.
+-  the Zipf's law (discovered by the linguist-statistician George Zipf) states that the frequency of a word is inversely proportional to the rank of the word, where rank 1 is given to the most frequent word, 2 to the second most frequent and so on. This is also called the power law distribution.
+- The Zipf's law helps us form the basic intuition for stopwords - these are the words having the highest frequencies (or lowest ranks) in the text, and are typically of limited 'importance'.
+- there are three kinds of words present in any text corpus:
+- - Highly frequent words, called stop words, such as ‘is’, ‘an’, ‘the’, etc.
+- - Significant words, which are typically more important to understand the text
+- - Rarely occurring words, which are again less important than significant words
+- Generally speaking, stopwords are removed from the text for two reasons:
+
+- They provide no useful information, especially in applications such as spam detector or search engine. Therefore, you’re going to remove stopwords from the spam dataset.
+
+- Since the frequency of words is very high, removing stopwords results in a much smaller data as far as the size of data is concerned. Reduced size results in faster computation on text data. There’s also the advantage of less number of features to deal with if stopwords are removed.
+- Rank of a word is the ordered index of the word in the word list.
+- 
