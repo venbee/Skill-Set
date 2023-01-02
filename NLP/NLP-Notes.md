@@ -203,4 +203,44 @@ The ‘*’ quantifier is used to mark the presence of the preceding character z
 
 - Since the frequency of words is very high, removing stopwords results in a much smaller data as far as the size of data is concerned. Reduced size results in faster computation on text data. There’s also the advantage of less number of features to deal with if stopwords are removed.
 - Rank of a word is the ordered index of the word in the word list.
-- 
+
+### Tokenization
+- machine learning works on numeric data, not text.
+- you will extract features from the messages. From each message you’ll extract each word by breaking each message into separate words or 'tokens'.
+- tokenisation - a technique that’s used to split the text into smaller elements. 
+- These elements can be characters, words, sentences, or even paragraphs depending on the application you’re working on.
+- In the spam detector case, you will break each message into different words, so it’s called word tokenisation
+- other types of tokenisation techniques such as character tokenisation, sentence tokenisation, etc. Different types of tokenisation are needed in different scenarios.
+- In NLTK, you also have different types of tokenisers present that you can use in different applications.
+- The most popular tokenisers are:
+- - Word tokeniser splits text into different words.
+- - Sentence tokeniser splits text in different sentence.
+- - Tweet tokeniser handles emojis and hashtags that you see in social media texts
+- - Regex tokeniser lets you build your own custom tokeniser using regex patterns of your choice.
+
+### Bag-of-words Representation
+- how to represent text in a format that you can feed into machine learning algorithms.
+- The most common and most popular approach is to create a bag-of-words representation of the text data that you have. The central idea is that any given piece of text, i.e., tweets, articles, messages, emails etc., can be “represented” by a list of all the words that occur in it (after removing the stopwords), where the sequence of occurrence does not matter. You can visualise it as the “bag” of all “words” that occur in it.
+- you need to represent all the bags in a matrix format, after which you can use ML algorithms such as naive Bayes, logistic regression, SVM etc., to do the final classification.
+- Each document sits on a separate row and each word of the vocabulary has a its own column. These vocabulary words are also called as features of the text.
+- The bag-of-words representation is also called bag-of-words model but this is not to be confused with a machine learning model. A bag-of-words model is just the matrix that you get from text data.
+- The frequency approach is slightly more popular and the NLTK library in Python also fills the bag-of-words model with word frequencies rather than binary 0 or 1 values.
+- keeping the two separate is actually going to hinder the performance of the machine learning algorithm since it is redundant information. Also, this redundancy is going to increase the number of features due to which the classifier can face the curse of dimensionality (error increases with the increase in number of features). To get rid of this problem, you’re going to learn two more preprocessing techniques - stemming and lemmatization
+
+### Stemming and Lemmatization
+- Stemming makes sure that different variations of a word, say ‘warm’, warmer’, ‘warming’ and ‘warmed,’ are represented by a single token - ‘warm’, because they all represent the same information (represented by the 'stem' of the word).
+- Another similar preprocessing step (and an alternative to stemming) is lemmatisation. 
+- the repeated tokens or features were nothing but a variation or an inflected form of the other token. 
+- The two techniques that you just learnt reduce these inflected words to the original base form.
+- Stemming
+- - It is a rule-based technique that just chops off the suffix of a word to get its root form, which is called the ‘stem’.
+- Porter stemmer: This was developed in 1980 and works only on English words. 
+- Snowball stemmer: This is a more versatile stemmer that not only works on English words but also on words of other languages such as French, German, Italian, Finnish, Russian, and many more languages. 
+- Lemmatization
+- - This is a more sophisticated technique (and perhaps more 'intelligent') in the sense that it doesn’t just chop off the suffix of a word. Instead, it takes an input word and searches for its base word by going recursively through all the variations of dictionary words. The base word in this case is called the lemma.
+- The most popular lemmatizer is the WordNet lemmatizer created by a team of researchers at the Princeton university.
+- A stemmer is a rule based technique, and hence, it is much faster than the lemmatizer
+- stemmer typically gives less accurate results than a lemmatizer.
+- A lemmatizer is slower because of the dictionary lookup but gives better results than a stemmer.
+- for a lemmatizer to perform accurately, you need to provide the part-of-speech tag of the input word
+-  the Porter stemmer and the Snowball stemmer. Snowball stemmer works a little better, but usually, you won’t see much of a difference as both of them are rule based. 
