@@ -244,3 +244,17 @@ The ‘*’ quantifier is used to mark the presence of the preceding character z
 - A lemmatizer is slower because of the dictionary lookup but gives better results than a stemmer.
 - for a lemmatizer to perform accurately, you need to provide the part-of-speech tag of the input word
 -  the Porter stemmer and the Snowball stemmer. Snowball stemmer works a little better, but usually, you won’t see much of a difference as both of them are rule based. 
+
+### Final Bag-of-words representation
+- Lemmatization only works on correctly spelt words.
+### TF-IDF Representation
+- The term TF stands for term frequency
+- the term IDF stands for inverse document frequency.
+- The TF-IDF representation, also called the TF-IDF model, takes into the account the importance of each word.
+- Higher weights are assigned to terms that are present frequently in a document and which are rare among all documents. On the other hand, a low score is assigned to terms which are common across all documents.
+- The idf of a term is the log of the total number of documents divided by the total number of documents where the term appears. Now, the total number of documents where the term is present is a constant and so is the total number of documents. Hence, idf is also a constant for a given word.
+
+- Words less than a certain threshold are removed to eliminate special characters such as double exclamation marks, or double dots (the period character). And you won’t lose any information by doing this because there are no words less than two characters other than some stopwords (such as ‘am’, ‘is’, etc.).
+
+## Advanced Lexical Processing
+- 
