@@ -257,4 +257,30 @@ The ‘*’ quantifier is used to mark the presence of the preceding character z
 - Words less than a certain threshold are removed to eliminate special characters such as double exclamation marks, or double dots (the period character). And you won’t lose any information by doing this because there are no words less than two characters other than some stopwords (such as ‘am’, ‘is’, etc.).
 
 ## Advanced Lexical Processing
+- Phonetic hashing and the Soundex algorithm to handle different pronunciations of a word
+- The minimum-edit-distance algorithm and building a spell corrector 
+- Pointwise mutual information (PMI) score to preserve terms that comprise of more than one word
+
+- Canonicalisation means to reduce a word to its base form (Stemming and Lemmatization).
+- Stemming tries to reduce a word to its root form. Lemmatization tries to reduce a word to its lemma. The root and the lemma are nothing but the base forms of the inflected words.
+- To deal with misspellings, you’ll need to canonicalise it by correcting the spelling of the word.
+- To deal with different spellings that occur due to different pronunciations, you’ll learn the concept of phonetic hashing which will help you canonicalise different versions of the same word to a base word.
+- Phonetic hashing buckets all the similar phonemes (words with similar sound or pronunciation) into a single bucket and gives all these variations a single hash code.
+- Phonetic hashing is done using the Soundex algorithm. American Soundex is the most popular Soundex algorithm. It buckets British and American spellings of a word to a common code. It doesn't matter which language the input word comes from - as long as the words sound similar, they will get the same hash code.
+- Words with different pronunciations tend to have same consonant sounds but different vowels and ‘H’, ‘Y’ and ‘W’ sounds. Hence, they are not the identity of the words. The consonants are the real identity of the words except for the consonants ‘H’, ‘Y’ and ‘W’.
+- An edit distance is a distance between two strings which is a non-negative integer number.
+- edit distance is the number of edits that are needed to convert a source string to a target string.
+-   Insertion of a letter in the source string. To convert ‘color’ to ‘colour’, you need to insert the letter ‘u’ in the source string.
+- Deletion of a letter from the source string. To convert ‘Matt’ to ‘Mat’, you need to delete one of the ‘t’s from the source string.
+- Substitution of a letter in the source string. To convert ‘Iran’ to ‘Iraq’, you need to substitute ‘n’ with ‘q’
+- The statement is correct. It doesn't matter which is the source string and which is the target string while calculating the edit distance.
+- The Damerau–Levenshtein distance, apart from allowing the three edit operations, also allows the swap (transposition) operation between two adjacent characters which costs only one edit instead of two.
+- This edit operation was introduced because swapping is a very common mistake. For example, while typing, people mistype ‘relief’ to ‘releif’. This has to be accounted as a single mistake (one edit distance), not two.
+- A spell corrector is a widely used application that you would see almost everywhere on the internet.
+- Spell correction is an important part of lexical processing. 
+- The known() function filters out the valid English word from a list of given words. It uses the frequency distribution as a dictionary that was created using the seed document. 
+-  the function possible_corrections() returns a list of all the potential words that can be the correct alternative spelling.
+- pointwise mutual information, also called the PMI
+- involves identifying seperate terms and representing them as a single token.
+- After calculating the PMI score, you can compare it with a cutoff value and see if PMI is larger or smaller than the cutoff value. A good cutoff value is zero. Terms with PMI larger than zero are valid terms, i.e. they don’t need to be tokenised into different words.
 - 
