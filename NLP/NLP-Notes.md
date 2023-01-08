@@ -283,4 +283,56 @@ The ‘*’ quantifier is used to mark the presence of the preceding character z
 - pointwise mutual information, also called the PMI
 - involves identifying seperate terms and representing them as a single token.
 - After calculating the PMI score, you can compare it with a cutoff value and see if PMI is larger or smaller than the cutoff value. A good cutoff value is zero. Terms with PMI larger than zero are valid terms, i.e. they don’t need to be tokenised into different words.
-- 
+
+# Syntatic Processing
+- - Part of speech (pos) tagging
+- - Constituency Parsing
+- - Dependency Parsing 
+- Arrangement of words in a sentence plays a crucial role in better understanding the meaning of the sentence. These arrangements are governed by a set of rules that we refer to as ‘syntax’, and the process by which a machine understands the syntax is referred to as syntactic processing.
+- **Syntax:** A set of rules that govern the arrangement of words and phrases to form a meaningful and well-formed sentence
+- **Syntactic processing:** A subset of NLP that deals with the syntax of the language.
+- **Part of Speech**
+- A word can be tagged as a noun, verb, adjective, adverb, preposition, etc., depending upon its role in the sentence. These tags are called the PoS tags. 
+- Assigning the correct tag, such as noun, verb and adjective, is one of the most fundamental tasks in syntactic analysis.
+- Parts of speech (PoS) are the groups or classes of words that have similar grammatical properties and play similar roles in a sentence. They are defined based on how they relate to the neighbouring words.
+-  Lexical analysis is the data pre-processing and feature extraction step. It involves analysis at word level. 
+- Syntactical analysis aims at finding structural relationships among the words of a sentence.
+- Syntactic analysis checks the grammatical structure of a sentence.
+- PoS tagging identifies the linguistic role of each word in a sentence.
+- Dependency parsing is one of the levels in syntactic processing, not lexical processing.
+- Assigning the correct PoS tags helps us better understand the intended meaning of a phrase or a sentence and is thus a crucial part of syntactic processing. 
+- In fact, all the subsequent parsing techniques (constituency parsing, dependency parsing, etc.) use the part-of-speech tags to parse the sentence.
+- A PoS tag can be classified in two ways: open class and closed class.
+- Open class refers to tags that are evolving over time and where new words are being added for the PoS tag. (Ex: Noun, Verb, Adjective, Adverb, Interjection)
+- Closed class refers to tags that are fixed and do not change with time.(Ex: Prepositions, Pronouns, Conjuctions, Articles, Determiners, Numerals)
+- spaCy is an open-source library used for advanced natural language processing
+- VBG, which is used to tag words that are verbs or gerunds or those with present participle tense. 
+- NNP stands for proper nouns that name specific people, places, things or ideas. ‘
+- a PoS tagger is a model/algorithm that automatically assigns a PoS tag to each word of a sentence.
+- **Hidden Markov Model**
+- Sequence labelling is the task of assigning the respective PoS tags of the words in the sentence using the PoS tag of the previous word in the sentence.
+- Hidden Markov Model can be used to do sequence labelling, which means that it takes input of words in a sequence and assigns the PoS tags to each word based on the PoS tag of the previous word.
+- why Hidden Markov Model is called ‘Hidden’:
+- - When you observe (read/listen) a sentence, you only observe the words in the sentence and not their PoS tags; thus, PoS tags are hidden.
+- - You must infer these hidden tags from your observations, and that's why Hidden Markov Model is called Hidden.
+- There are majorly two assumptions that HMM follows, which are as follows:
+- - The PoS tag of the next word is dependent only on the PoS tag of the current word.
+- - The probability of the next word depends on the PoS tag of the next word. 
+- To build any machine learning model, you first need to train that model using some training data, and then, you need to use that model to predict the output on the test data.
+- Here, the train data is the corpus of sentences, and you need to perform some manual tasks to assign the PoS tags to each word in the corpus. Once you manually assign the PoS tags to each word in the training corpus, you create two important matrices using the training dataset, which are as follows:
+- - Emission matrix
+- - Transition matrix
+- Emission matrix: This matrix contains all words of the corpus as row labels; the PoS tag is a column header, and the values are the conditional probability values.
+- Conditional probability is defined as the probability of occurrence of one event given that some other event has already happened.
+- Transition matrix: This matrix contains PoS tags in the column and row headers. Let’s try to understand the conditional probability values that have been given in the following table.
+- the transition matrix gives the information of the next PoS tag considering the current PoS tag of the word.
+- Markov assumption: The probability of the PoS tag of a word depends only on the PoS tag of the previous word.
+- Sequence labelling is the task of labelling the individual units (words) in a sequence (sentence) by looking at the PoS tag of the previous word. PoS tagging is thus a natural use case of sequence labelling. 
+- For the implementation of PoS tagging, you are going to use a Python library, i.e., spaCy.
+- spaCy works well in different applications of NLP such as PoS tagging, parsing and lexical processing steps. 
+- Heteronyms are words that have the same spelling but mean differently when pronounced differently.
+- **model = spacy.load(“en_core_web_sm”)**
+- **Word sense disambiguation (WSD):** WSD is an open problem in computational linguistics concerned with which sense of word is used in a sentence.
+- the problem when the system is not able to identify the correct pronunciation of the words which have the same PoS tag but different meanings in different contexts can be considered under the WSD problem. 
+- # shorten the pipeline loading
+- nlp=spacy.load('en_core_web_sm',disable=['parser','ner'])
