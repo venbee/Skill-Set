@@ -336,3 +336,12 @@ The ‘*’ quantifier is used to mark the presence of the preceding character z
 - the problem when the system is not able to identify the correct pronunciation of the words which have the same PoS tag but different meanings in different contexts can be considered under the WSD problem. 
 - # shorten the pipeline loading
 - nlp=spacy.load('en_core_web_sm',disable=['parser','ner'])
+- Parsing techniques:
+- - Dependency parsing
+- - Constituency parsing
+- Parsing means to break down a given sentence into its 'grammatical constituents'.
+- Parsing is an important step in many applications that helps us better understand the linguistic structure of sentences.
+- Constituency parsing is the process of identifying the constituents in a sentence and the relation between them.
+- A constituency parse tree always contains the words of a sentence as its terminal nodes. Usually, each word has a parent node containing its part-of-speech tag (noun, adjective, verb, etc.).
+- All the other non-terminal nodes represent the constituents of the sentence and are usually one of verb phrases, noun phrases or prepositional phrases (PP).
+- 
