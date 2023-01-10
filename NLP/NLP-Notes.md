@@ -344,4 +344,13 @@ The ‘*’ quantifier is used to mark the presence of the preceding character z
 - Constituency parsing is the process of identifying the constituents in a sentence and the relation between them.
 - A constituency parse tree always contains the words of a sentence as its terminal nodes. Usually, each word has a parent node containing its part-of-speech tag (noun, adjective, verb, etc.).
 - All the other non-terminal nodes represent the constituents of the sentence and are usually one of verb phrases, noun phrases or prepositional phrases (PP).
+- constituency parsing creates trees containing a syntactical representation of a sentence according to a context-free grammar rule. This representation is highly hierarchical and divides the sentences into its single phrasal constituents.
+- Dependency parsing identifies the relation between words and produces a concise representation of these dependencies. 
+- spaCy is an open-source library for advanced natural language processing.
+- the ‘displacy’ library which is a modern syntactic dependency visualiser.
+- the number of arrows emitting from a particular word of a sentence in the dependency parse tree are called the ‘children’ of that word.
+- The root word in any dependency parse tree does not have any parent. It will however have children.
+- The difference in the dependency parse tree of an active and a passive sentence can be used to create a rule to identify whether a particular sentence is active or a passive sentence.
+- The Matcher matches the sequences of tokens based on pattern rules.
+- ‘There are always outward arrows from the ROOT dependency tagged token for a given sentence’s dependency parse tree’.
 - 
