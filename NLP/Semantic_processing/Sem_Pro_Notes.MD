@@ -5,3 +5,5 @@
 - - Distributional Semantics
 - Semantic Processing uses techniques and algorithms to infer the meaning of a given piece of text.
 - 
+
+### Semantic Processing - 2
